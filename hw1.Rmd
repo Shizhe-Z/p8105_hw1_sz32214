@@ -1,0 +1,38 @@
+---
+title: "p8105_hw1_sz3214"
+author: "Sherry Zhang"
+date: "2024-09-20"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Problem 1
+
+```{r, results='hide'}
+
+data("penguins", package = "palmerpenguins")
+summary(penguins)
+
+```
+
+`species`: Penguin species (Adelie, Chinstrap, Gentoo)
+
+`island`: The island in the Palmer Archipelago (Biscoe, Dream, Torgersen)
+
+`bill_length_mm`: Length of the penguin's bill in millimeters
+
+`bill_depth_mm`: Depth of the penguin's bill in millimeters
+
+`flipper_length_mm`: Length of the penguin's flipper in millimeters
+
+`body_mass_g`: Penguin body mass in grams
+
+`sex`: Penguin's sex (male, female)
+
+The dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+
+The mean flipper length of the penguins is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm, after accounting for missing data.
+
+
+
