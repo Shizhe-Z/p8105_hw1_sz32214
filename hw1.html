@@ -384,6 +384,34 @@ ggsave(&quot;penguinscatter.png&quot;, plot = plot)</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values or values outside the scale range
 ## (`geom_point()`).</code></pre>
 </div>
+<div id="problem-2" class="section level1">
+<h1>Problem 2</h1>
+<p>creat a data frame</p>
+<pre class="r"><code>numeric = rnorm(10)
+
+logical = numeric &gt; 0
+
+character = sample(letters, 10, replace = TRUE)
+
+factor = factor(sample(c(&quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;), 10, replace = TRUE))
+
+df = data.frame(numeric, logical, character, factor)</code></pre>
+<p>Calculate the mean</p>
+<pre class="r"><code>mean(pull(df, numeric))</code></pre>
+<pre><code>## [1] -0.003627392</code></pre>
+<pre class="r"><code>mean(pull(df, logical))</code></pre>
+<pre><code>## [1] 0.6</code></pre>
+<pre class="r"><code>mean(pull(df, character))</code></pre>
+<pre><code>## Warning in mean.default(pull(df, character)): argument is not numeric or
+## logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(pull(df, factor))</code></pre>
+<pre><code>## Warning in mean.default(pull(df, factor)): argument is not numeric or logical:
+## returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>Numeric and logical variables works while character and factor don’t
+work.</p>
+</div>
 
 
 

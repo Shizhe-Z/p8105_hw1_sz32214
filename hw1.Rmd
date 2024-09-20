@@ -52,3 +52,38 @@ ggsave("penguinscatter.png", plot = plot)
 
 
 
+# Problem 2
+
+```{r, include=FALSE}
+library(tidyverse)
+```
+
+creat a data frame
+
+```{r}
+
+numeric = rnorm(10)
+
+logical = numeric > 0
+
+character = sample(letters, 10, replace = TRUE)
+
+factor = factor(sample(c("Low", "Medium", "High"), 10, replace = TRUE))
+
+df = data.frame(numeric, logical, character, factor)
+
+```
+
+Calculate the mean
+
+```{r}
+mean(pull(df, numeric))
+mean(pull(df, logical))
+mean(pull(df, character))
+mean(pull(df, factor))
+```
+
+Numeric and logical variables works while character and factor don't work.
+
+
+
