@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Sherry Zhang" />
+<meta name="author" content="Shizhe Zhang" />
 
 <meta name="date" content="2024-09-20" />
 
@@ -351,7 +351,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">p8105_hw1_sz3214</h1>
-<h4 class="author">Sherry Zhang</h4>
+<h4 class="author">Shizhe Zhang</h4>
 <h4 class="date">2024-09-20</h4>
 
 </div>
@@ -375,6 +375,14 @@ millimeters</p>
 <p>The dataset contains 344 rows and 8 columns.</p>
 <p>The mean flipper length of the penguins is 200.9152047 mm, after
 accounting for missing data.</p>
+<pre class="r"><code>plot &lt;- ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() + 
+  labs(x = &quot;Bill Length (mm)&quot;, y = &quot;Flipper Length (mm)&quot;, color = &quot;Species&quot;)
+
+ggsave(&quot;penguinscatter.png&quot;, plot = plot)</code></pre>
+<pre><code>## Saving 7 x 5 in image</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
 </div>
 
 

@@ -1,6 +1,6 @@
 ---
 title: "p8105_hw1_sz3214"
-author: "Sherry Zhang"
+author: "Shizhe Zhang"
 date: "2024-09-20"
 output: html_document
 editor_options: 
@@ -33,6 +33,22 @@ summary(penguins)
 The dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 
 The mean flipper length of the penguins is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm, after accounting for missing data.
+
+
+```{r, include=F}
+library(ggplot2)
+```
+
+
+```{r}
+
+plot <- ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() + 
+  labs(x = "Bill Length (mm)", y = "Flipper Length (mm)", color = "Species")
+
+ggsave("penguinscatter.png", plot = plot)
+
+```
 
 
 
