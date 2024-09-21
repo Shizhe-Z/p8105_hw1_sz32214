@@ -2,7 +2,7 @@
 title: "p8105_hw1_sz3214"
 author: "Shizhe Zhang"
 date: "2024-09-20"
-output: html_document
+output: github_document
 editor_options: 
   chunk_output_type: console
 ---
@@ -84,6 +84,19 @@ mean(pull(df, factor))
 ```
 
 Numeric and logical variables works while character and factor don't work.
+
+```{r, results='hide'}
+df_numeric = mutate(df, 
+    logical_vals = as.numeric(logical),
+    character_vals = as.numeric(character),  
+    factor_vals = as.numeric(factor)  
+  )
+```
+
+There is a warning about character variable.
+Because converting characters to numeric typically results in NA since there's no inherent numeric mapping for arbitrary text strings.
+
+It can explain why NA happened when took the mean of character variable.
 
 
 
